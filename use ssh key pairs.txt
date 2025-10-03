@@ -1,0 +1,44 @@
+why use ssh key pairs? 
+
+is a fundamental secure best practice, because it offers far superior protection compared to traditional passwords: 
+
+
+1-immunity to brute force attacks:  
+
+ssh key are a pair of cryptographically linked files:  a public key (stored on the server) and a private key ( stored securely on your local machine.) 2048 or 4096 bits. long. an attacker trying to guess a 4096-bit key through brute force would take a lot of time.
+and the private key never leaves your computer. 
+
+2- protected from keyloggers: 
+
+keyloggers are malwares that captures every digit on your keyboard. if you type your password you can be captured. but, with the private key is read only by your disk during the authentication bypassing the keyboard input mechanism
+
+
+
+
+
+
+
+
+COMMANDS: 
+
+
+mkdir ~/.ssh && chmod 700 ~/.ssh	
+
+Creates the 
+required .ssh directory in the user's home folder and sets the necessary permissions (700) so only the owner can read, write, and execute.
+
+
+
+ssh-keygen -b 4096	
+
+(Run on your local machine) Generates a public/private SSH key pair, specifying a strong key size of 4096 bits.
+
+
+ssh-copy-id <username>@<server_ip>	
+
+(Recommended for Linux/Mac) A simple command to copy the public key to the server's ~/.ssh/authorized_keys file.
+
+
+scp~/.ssh/id_rsa.pub<username>@<server_ip>:.ssh/authorized_keys	
+
+(Similar to the Windows version shown) Securely copies your public key file to the server and appends it to the authorized_keys file.

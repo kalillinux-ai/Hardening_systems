@@ -1,0 +1,23 @@
+-sudo apt update	
+
+Refreshes the local package index. It contacts the software repositories on the internet and downloads the latest list of available packages and their version numbers.
+
+-sudo apt upgrade	
+
+Installs the updates. It compares 
+
+your currently installed packages against the recently updated local list (from the update command) and downloads/installs the newer versions.
+
+
+why use it ? 
+
+"sudo apt update" is the first and most crucial step in managing or upgrading software on debian-based or ubuntu.
+
+it performs the task of synchronizing your local package index with the official package repositories on the internet.
+
+
+"sudo apt upgrade" is essential for: 
+
+ Security: software updates have security patches that fix vulnerabilities hackers could exploit. keep packages up to date helps protect your system 
+
+bug fixes: updates fix software bugs and enhance overall system performance 

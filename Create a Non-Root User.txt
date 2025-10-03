@@ -1,0 +1,55 @@
+why use a non-root user 
+
+Creating a non-root user for daily operations is a core Linux security and administration practice that follows the Principle of Least Privilege.
+
+
+1- Minimize attack surface: 
+
+the root user is target by hackers, by disabling direct remote root login via SSH, attackers will try to guess an unknown username, password or key. making their job much harder. 
+
+1.2: 
+
+
+it can limit the hacker privileges: 
+
+if an application is running (like a web-server or a database) were compromised  by a hacker, and that application was running as the non-root user, the attacker´s ability to navigate the system is severely limited. 
+
+
+2- preventing mistakes:   
+
+Using "sudo" as a Pause: To perform an administrative task (like installing software or restarting a service), the non-root user must consciously use the sudo command. This requires you to type your password, which acts as a necessary "pause" to make you stop and confirm that you are about to execute a powerful, system-altering command.
+
+
+
+
+
+
+
+
+
+
+
+COMMANDS:	                
+
+
+"sudo adduser <username>	"
+
+Creates a new user account on the system
+
+
+
+"sudo usermod -aG sudo <username>"
+
+
+Adds the newly 
+created user to the sudo group, allowing them to execute commands with root privileges when prepended with sudo.
+
+
+"logout"	
+
+Logs the current user out of the SSH session.
+
+
+"ssh <username>@<server_ip>"	
+
+Logs back in to the server using the new, non-root account.
